@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Crime Record Manager</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Crime Record Manager", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Setup<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Designation", "Index", "Designations")</li>
+                            <li>@Html.ActionLink("Department", "Index", "Departments")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Employee", "Index", "Employees")</li>
+                            <li>@Html.ActionLink("Police Station", "Index", "PoliceStations")</li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="False">Collect<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Complain", "Index", "Complains")</li>
+                            <li>@Html.ActionLink("Details", "Index", "CrimeDetails")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Victim", "Index", "Victims")</li>
+                            <li>@Html.ActionLink("FIR", "Index", "Firs")</li>
+                        </ul>
+                    </li>
+
+                    @if (Request.IsAuthenticated && (User.IsInRole("Admin") || User.IsInRole("Officer") || User.IsInRole("Writer")))
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="False">Investigate<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>@Html.ActionLink("Investigation", "Index", "Investigations")</li>
+                                <li class="divider"></li>
+                                <li>@Html.ActionLink("Evidence Details", "Index", "EvidenceDetails")</li>
+                                <li class="divider"></li>
+                                <li>@Html.ActionLink("Criminal Details", "Index", "CriminalDetails")</li>
+                            </ul>
+                        </li>
+                    }
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="False">Other<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Charge Sheet", "Index", "ChargeSheets")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Complain Details", "Index", "ComplainDetails")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
+                    </li>
+
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+            <div id="label-flash-message" class="label-danger text-center" style="color:white;">
+                @ViewBag.FlashMessage
+                        @if (ViewBag.FlashMessage != null)
+                        {
+                <button id="close-flash-message" type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    &nbsp;
+                </button>
+                            
+                        }
+                    </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Crime Record Manager</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript">
+        $("#close-flash-message").click(function(){
+            $("#label-flash-message").hide();
+        });
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
