@@ -6,6 +6,7 @@ using System.Web;
 
 namespace CrimeRecordManager.Models
 {
+
     public class CriminalDetails
     {
         [Key]
@@ -18,7 +19,7 @@ namespace CrimeRecordManager.Models
         public string Phone { get; set; }
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-        public string Gender { get; set; }
+        public Gender? Gender { get; set; }
         [StringLength(300)]
         public string OldRecord { get; set; }
         [Required]

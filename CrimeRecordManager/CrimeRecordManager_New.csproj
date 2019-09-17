@@ -168,11 +168,23 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccusedDetailsController.cs" />
+    <Compile Include="Controllers\ChargeSheetsController.cs" />
+    <Compile Include="Controllers\ComplaintRegistrationsController.cs" />
+    <Compile Include="Controllers\CrimeDetailsController.cs" />
+    <Compile Include="Controllers\CrimesController.cs" />
+    <Compile Include="Controllers\CriminalDetailsController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\DesignationsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\EvidenceDetailsController.cs" />
+    <Compile Include="Controllers\FirsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InvestigationsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PoliceStationsController.cs" />
+    <Compile Include="Controllers\VictimDetailsController.cs" />
+    <Compile Include="Controllers\WitnessDetailsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -196,10 +208,31 @@
     <Compile Include="Migrations\201909131639453_employee_gender.Designer.cs">
       <DependentUpon>201909131639453_employee_gender.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909150513392_crime.cs" />
+    <Compile Include="Migrations\201909150513392_crime.Designer.cs">
+      <DependentUpon>201909150513392_crime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909150608391_Fir.cs" />
+    <Compile Include="Migrations\201909150608391_Fir.Designer.cs">
+      <DependentUpon>201909150608391_Fir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909150751258_Detail.cs" />
+    <Compile Include="Migrations\201909150751258_Detail.Designer.cs">
+      <DependentUpon>201909150751258_Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909151519469_Accused.cs" />
+    <Compile Include="Migrations\201909151519469_Accused.Designer.cs">
+      <DependentUpon>201909151519469_Accused.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909170729060_criminal.cs" />
+    <Compile Include="Migrations\201909170729060_criminal.Designer.cs">
+      <DependentUpon>201909170729060_criminal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AccusedDetail.cs" />
     <Compile Include="Models\ChargeSheet.cs" />
-    <Compile Include="Models\ComplainDetail.cs" />
+    <Compile Include="Models\ComplaintRegistration.cs" />
     <Compile Include="Models\Crime.cs" />
     <Compile Include="Models\CrimeDetail.cs" />
     <Compile Include="Models\CriminalDetails.cs" />
@@ -259,6 +292,7 @@
     <Content Include="admin-lte\img\avatar2.png" />
     <Content Include="admin-lte\img\avatar3.png" />
     <Content Include="admin-lte\img\avatar5.png" />
+    <Content Include="admin-lte\img\background-1.jpg" />
     <Content Include="admin-lte\img\boxed-bg.jpg" />
     <Content Include="admin-lte\img\boxed-bg.png" />
     <Content Include="admin-lte\img\credit\american-express.png" />
@@ -287,6 +321,77 @@
     <Content Include="admin-lte\js\demo.js" />
     <Content Include="admin-lte\js\pages\dashboard.js" />
     <Content Include="admin-lte\js\pages\dashboard2.js" />
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Antlr3.Runtime.pdb" />
+    <Content Include="bin\CrimeRecordManager.dll" />
+    <Content Include="bin\CrimeRecordManager.pdb" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.xml" />
+    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.xml" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Owin.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Owin.xml" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Microsoft.Owin.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.Cookies.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Cookies.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Facebook.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Facebook.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.Google.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Google.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.OAuth.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.OAuth.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.Twitter.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Twitter.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.xml" />
+    <Content Include="bin\Microsoft.Owin.xml" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\Owin.dll" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\System.AppContext.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Optimization.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
+    <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -456,6 +561,82 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="import\css\animate.css" />
+    <Content Include="import\css\bootstrap.min.css" />
+    <Content Include="import\css\flaticon.css" />
+    <Content Include="import\css\font-awesome.min.css" />
+    <Content Include="import\css\jquery-ui.min.css" />
+    <Content Include="import\css\owl.carousel.min.css" />
+    <Content Include="import\css\slicknav.min.css" />
+    <Content Include="import\css\style.css" />
+    <Content Include="import\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="import\icon-fonts\Flaticon.svg" />
+    <Content Include="import\icon-fonts\fontawesome-webfont.svg" />
+    <Content Include="import\img\1.png" />
+    <Content Include="import\img\arrow-down.png" />
+    <Content Include="import\img\arrow-up.png" />
+    <Content Include="import\img\background-1.jpg" />
+    <Content Include="import\img\background-2.jpg" />
+    <Content Include="import\img\background.jpg" />
+    <Content Include="import\img\banner-bg.jpg" />
+    <Content Include="import\img\bg-2.jpg" />
+    <Content Include="import\img\bg.jpg" />
+    <Content Include="import\img\blog-thumbs\1.jpg" />
+    <Content Include="import\img\blog-thumbs\2.jpg" />
+    <Content Include="import\img\cards.png" />
+    <Content Include="import\img\cart\1.jpg" />
+    <Content Include="import\img\cart\2.jpg" />
+    <Content Include="import\img\cart\3.jpg" />
+    <Content Include="import\img\desk.png" />
+    <Content Include="import\img\download.png" />
+    <Content Include="import\img\icons\1.png" />
+    <Content Include="import\img\icons\2.png" />
+    <Content Include="import\img\icons\3.png" />
+    <Content Include="import\img\imag.png" />
+    <Content Include="import\img\images %281%29.jpg" />
+    <Content Include="import\img\images.jpg" />
+    <Content Include="import\img\img.jpg" />
+    <Content Include="import\img\logo-light.png" />
+    <Content Include="import\img\logo.png" />
+    <Content Include="import\img\logo1.png" />
+    <Content Include="import\img\mac.png" />
+    <Content Include="import\img\mastercart.png" />
+    <Content Include="import\img\nepalpolice.jpg" />
+    <Content Include="import\img\paypal.png" />
+    <Content Include="import\img\Police\cib.jpg" />
+    <Content Include="import\img\product\1.jpg" />
+    <Content Include="import\img\product\10.jpg" />
+    <Content Include="import\img\product\11.jpg" />
+    <Content Include="import\img\product\12.jpg" />
+    <Content Include="import\img\product\2.jpg" />
+    <Content Include="import\img\product\3.jpg" />
+    <Content Include="import\img\product\4.jpg" />
+    <Content Include="import\img\product\5.jpg" />
+    <Content Include="import\img\product\6.jpg" />
+    <Content Include="import\img\product\7.jpg" />
+    <Content Include="import\img\product\8.jpg" />
+    <Content Include="import\img\product\9.jpg" />
+    <Content Include="import\img\single-product\1.jpg" />
+    <Content Include="import\img\single-product\2.jpg" />
+    <Content Include="import\img\single-product\3.jpg" />
+    <Content Include="import\img\single-product\4.jpg" />
+    <Content Include="import\img\single-product\thumb-1.jpg" />
+    <Content Include="import\img\single-product\thumb-2.jpg" />
+    <Content Include="import\img\single-product\thumb-3.jpg" />
+    <Content Include="import\img\single-product\thumb-4.jpg" />
+    <Content Include="import\img\trafficpolice.jpg" />
+    <Content Include="import\js\bootstrap.min.js" />
+    <Content Include="import\js\jquery-3.2.1.min.js" />
+    <Content Include="import\js\jquery-ui.min.js" />
+    <Content Include="import\js\jquery.nicescroll.min.js" />
+    <Content Include="import\js\jquery.slicknav.min.js" />
+    <Content Include="import\js\jquery.zoom.min.js" />
+    <Content Include="import\js\main.js" />
+    <Content Include="import\js\map.js" />
+    <Content Include="import\js\owl.carousel.min.js" />
+    <Content Include="obj\Debug\CrimeRecordManager.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\CrimeRecordManager.dll" />
+    <Content Include="obj\Debug\CrimeRecordManager.pdb" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\FontAwesome.otf" />
@@ -468,6 +649,40 @@
     <Content Include="Content\DataTables\media\images\Sorting icons.psd" />
     <Content Include="Content\DataTables\extensions\Buttons\css\mixins.scss" />
     <Content Include="Content\DataTables\extensions\Buttons\css\common.scss" />
+    <Content Include="import\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="import\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="import\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="import\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="import\icon-fonts\Flaticon.eot" />
+    <Content Include="import\icon-fonts\Flaticon.ttf" />
+    <Content Include="import\icon-fonts\Flaticon.woff" />
+    <Content Include="import\icon-fonts\fontawesome-webfont.eot" />
+    <Content Include="import\icon-fonts\fontawesome-webfont.woff" />
+    <Content Include="import\icon-fonts\fontawesome-webfont.woff2" />
+    <Content Include="import\Source\bootstrap-4.2.1-dist.zip" />
+    <Content Include="import\Source\Flaticon.zip" />
+    <Content Include="import\Source\font-awesome-4.7.0.zip" />
+    <Content Include="import\Source\jquery-ui-1.12.1.zip" />
+    <Content Include="import\Source\jquery.nicescroll-master.zip" />
+    <Content Include="import\Source\OwlCarousel2-2.3.4_2.zip" />
+    <Content Include="import\Source\sass\style.scss" />
+    <Content Include="import\Source\SlickNav-master.zip" />
+    <Content Include="import\Source\zoom-master.zip" />
+    <Content Include="bin\CrimeRecordManager.dll.config" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="obj\Debug\build.force" />
+    <Content Include="obj\Debug\CrimeRecordManager.csproj.CopyComplete" />
+    <Content Include="obj\Debug\CrimeRecordManager.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\CrimeRecordManager.csproj.GenerateResource.cache" />
+    <Content Include="obj\Debug\CrimeRecordManager.csprojAssemblyReference.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\DataTables\extensions\AutoFill\js\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\extensions\AutoFill\js\autoFill.bootstrap.min.js" />
@@ -692,19 +907,80 @@
     <Content Include="Views\Departments\Details.cshtml" />
     <Content Include="Views\Departments\Edit.cshtml" />
     <Content Include="Views\Departments\Index.cshtml" />
-    <Content Include="Views\Employees\Create.cshtml" />
-    <Content Include="Views\Employees\Delete.cshtml" />
-    <Content Include="Views\Employees\Details.cshtml" />
-    <Content Include="Views\Employees\Edit.cshtml" />
-    <Content Include="Views\Employees\Index.cshtml" />
     <Content Include="Views\Designations\Create.cshtml" />
     <Content Include="Views\Designations\Delete.cshtml" />
     <Content Include="Views\Designations\Details.cshtml" />
     <Content Include="Views\Designations\Edit.cshtml" />
     <Content Include="Views\Designations\Index.cshtml" />
+    <Content Include="Views\ChargeSheets\Create.cshtml" />
+    <Content Include="Views\ChargeSheets\Delete.cshtml" />
+    <Content Include="Views\ChargeSheets\Details.cshtml" />
+    <Content Include="Views\ChargeSheets\Edit.cshtml" />
+    <Content Include="Views\ChargeSheets\Index.cshtml" />
+    <Content Include="Views\Crimes\Create.cshtml" />
+    <Content Include="Views\Crimes\Delete.cshtml" />
+    <Content Include="Views\Crimes\Details.cshtml" />
+    <Content Include="Views\Crimes\Edit.cshtml" />
+    <Content Include="Views\Crimes\Index.cshtml" />
+    <Content Include="Views\CrimeDetails\Create.cshtml" />
+    <Content Include="Views\CrimeDetails\Delete.cshtml" />
+    <Content Include="Views\CrimeDetails\Details.cshtml" />
+    <Content Include="Views\CrimeDetails\Edit.cshtml" />
+    <Content Include="Views\CrimeDetails\Index.cshtml" />
+    <Content Include="Views\EvidenceDetails\Create.cshtml" />
+    <Content Include="Views\EvidenceDetails\Delete.cshtml" />
+    <Content Include="Views\EvidenceDetails\Details.cshtml" />
+    <Content Include="Views\EvidenceDetails\Edit.cshtml" />
+    <Content Include="Views\EvidenceDetails\Index.cshtml" />
+    <Content Include="Views\Firs\Create.cshtml" />
+    <Content Include="Views\Firs\Delete.cshtml" />
+    <Content Include="Views\Firs\Details.cshtml" />
+    <Content Include="Views\Firs\Edit.cshtml" />
+    <Content Include="Views\Firs\Index.cshtml" />
+    <Content Include="Views\PoliceStations\Create.cshtml" />
+    <Content Include="Views\PoliceStations\Delete.cshtml" />
+    <Content Include="Views\PoliceStations\Details.cshtml" />
+    <Content Include="Views\PoliceStations\Edit.cshtml" />
+    <Content Include="Views\PoliceStations\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Investigations\Create.cshtml" />
+    <Content Include="Views\Investigations\Delete.cshtml" />
+    <Content Include="Views\Investigations\Details.cshtml" />
+    <Content Include="Views\Investigations\Edit.cshtml" />
+    <Content Include="Views\Investigations\Index.cshtml" />
+    <Content Include="Views\CriminalDetails\Create.cshtml" />
+    <Content Include="Views\CriminalDetails\Delete.cshtml" />
+    <Content Include="Views\CriminalDetails\Details.cshtml" />
+    <Content Include="Views\CriminalDetails\Edit.cshtml" />
+    <Content Include="Views\CriminalDetails\Index.cshtml" />
+    <Content Include="Views\WitnessDetails\Create.cshtml" />
+    <Content Include="Views\WitnessDetails\Delete.cshtml" />
+    <Content Include="Views\WitnessDetails\Details.cshtml" />
+    <Content Include="Views\WitnessDetails\Edit.cshtml" />
+    <Content Include="Views\WitnessDetails\Index.cshtml" />
+    <Content Include="Views\VictimDetails\Create.cshtml" />
+    <Content Include="Views\VictimDetails\Delete.cshtml" />
+    <Content Include="Views\VictimDetails\Details.cshtml" />
+    <Content Include="Views\VictimDetails\Edit.cshtml" />
+    <Content Include="Views\VictimDetails\Index.cshtml" />
+    <Content Include="Views\ComplaintRegistrations\Create.cshtml" />
+    <Content Include="Views\ComplaintRegistrations\Delete.cshtml" />
+    <Content Include="Views\ComplaintRegistrations\Details.cshtml" />
+    <Content Include="Views\ComplaintRegistrations\Edit.cshtml" />
+    <Content Include="Views\ComplaintRegistrations\Index.cshtml" />
+    <Content Include="Views\AccusedDetails\Create.cshtml" />
+    <Content Include="Views\AccusedDetails\Delete.cshtml" />
+    <Content Include="Views\AccusedDetails\Details.cshtml" />
+    <Content Include="Views\AccusedDetails\Edit.cshtml" />
+    <Content Include="Views\AccusedDetails\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -735,6 +1011,31 @@
     <EmbeddedResource Include="Migrations\201909131639453_employee_gender.resx">
       <DependentUpon>201909131639453_employee_gender.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909150513392_crime.resx">
+      <DependentUpon>201909150513392_crime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909150608391_Fir.resx">
+      <DependentUpon>201909150608391_Fir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909150751258_Detail.resx">
+      <DependentUpon>201909150751258_Detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909151519469_Accused.resx">
+      <DependentUpon>201909151519469_Accused.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909170729060_criminal.resx">
+      <DependentUpon>201909170729060_criminal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\CrimeRecordManager.Migrations.Accused.resources" />
+    <EmbeddedResource Include="obj\Debug\CrimeRecordManager.Migrations.crime.resources" />
+    <EmbeddedResource Include="obj\Debug\CrimeRecordManager.Migrations.criminal.resources" />
+    <EmbeddedResource Include="obj\Debug\CrimeRecordManager.Migrations.Detail.resources" />
+    <EmbeddedResource Include="obj\Debug\CrimeRecordManager.Migrations.employee_date.resources" />
+    <EmbeddedResource Include="obj\Debug\CrimeRecordManager.Migrations.employee_gender.resources" />
+    <EmbeddedResource Include="obj\Debug\CrimeRecordManager.Migrations.Fir.resources" />
+    <EmbeddedResource Include="obj\Debug\CrimeRecordManager.Migrations.gender_employee.resources" />
+    <EmbeddedResource Include="obj\Debug\CrimeRecordManager.Migrations.InitialCreate.resources" />
+    <EmbeddedResource Include="obj\Debug\CrimeRecordManager.Migrations.initial_migration.resources" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -754,7 +1055,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>56148</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44331/</IISUrl>
+          <IISUrl>https://localhost:44333/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

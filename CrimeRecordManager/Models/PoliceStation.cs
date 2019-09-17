@@ -21,9 +21,8 @@ namespace CrimeRecordManager.Models
         public string Email { get; set; }
         public string Fax { get; set; }
         [Required]
-        public int EmployeeId { get; set; }
-        public virtual Employee Employee { get; set; }
-        public int ComplainDetailId { get; set; }
-        public virtual ComplainDetail ComplainDetail { get; set; }
+      
+        public int ComplaintRegistrationId { get; set; }
+        public virtual ComplaintRegistration ComplaintRegistration { get; set; }
     }
 }

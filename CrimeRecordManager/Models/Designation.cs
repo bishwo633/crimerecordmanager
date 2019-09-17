@@ -13,7 +13,7 @@ namespace CrimeRecordManager.Models
 
         [StringLength(100)]
         [Required]
-        [Display(Name = "Name")]
+        //[Display(Name = "Name")]
         public string DesignationName { get; set; }
 
         public string Description { get; set; }

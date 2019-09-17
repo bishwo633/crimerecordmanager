@@ -35,5 +35,29 @@ namespace CrimeRecordManager.Models
         public System.Data.Entity.DbSet<CrimeRecordManager.Models.Department> Departments { get; set; }
 
         public System.Data.Entity.DbSet<CrimeRecordManager.Models.Designation> Designations { get; set; }
+
+        public System.Data.Entity.DbSet<CrimeRecordManager.Models.ChargeSheet> ChargeSheets { get; set; }
+
+        public System.Data.Entity.DbSet<CrimeRecordManager.Models.Fir> Firs { get; set; }
+
+        public System.Data.Entity.DbSet<CrimeRecordManager.Models.ComplaintRegistration> ComplaintRegistrations { get; set; }
+
+        public System.Data.Entity.DbSet<CrimeRecordManager.Models.Crime> Crimes { get; set; }
+
+        public System.Data.Entity.DbSet<CrimeRecordManager.Models.CrimeDetail> CrimeDetails { get; set; }
+
+        public System.Data.Entity.DbSet<CrimeRecordManager.Models.CriminalDetails> CriminalDetails { get; set; }
+
+        public System.Data.Entity.DbSet<CrimeRecordManager.Models.PoliceStation> PoliceStations { get; set; }
+
+        public System.Data.Entity.DbSet<CrimeRecordManager.Models.EvidenceDetails> EvidenceDetails { get; set; }
+
+        public System.Data.Entity.DbSet<CrimeRecordManager.Models.Investigation> Investigations { get; set; }
+
+        public System.Data.Entity.DbSet<CrimeRecordManager.Models.VictimDetails> VictimDetails { get; set; }
+
+        public System.Data.Entity.DbSet<CrimeRecordManager.Models.WitnessDetails> WitnessDetails { get; set; }
+
+        public System.Data.Entity.DbSet<CrimeRecordManager.Models.AccusedDetail> AccusedDetails { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace CrimeRecordManager.Models
 
         [StringLength(100)]
         [Required]
-        [Display(Name = "Name")]
+        [Display(Name = " InchargeName")]
         public string EmployeeName { get; set; }
 
         public int Age { get; set; }
@@ -53,5 +53,10 @@ namespace CrimeRecordManager.Models
         [Display(Name = "Designation Name")]
         public int DesignationId { get; set; }
         public virtual Designation Designation { get; set; }
+
+        [Required]
+        [Display(Name = "PoliceStation Name")]
+        public int PoliceStationId { get; set; }
+        public virtual PoliceStation PoliceStation { get; set; }
     }
 }

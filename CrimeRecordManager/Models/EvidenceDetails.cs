@@ -16,6 +16,7 @@ namespace CrimeRecordManager.Models
         public string EvidenceType { get; set; }
         [DataType(DataType.Date)]
         public DateTime EvidenceFindingDate { get; set; }
+        [StringLength(400)]
         public string Description { get; set; }
         [Required]
         public int InvestigationId { get; set; }

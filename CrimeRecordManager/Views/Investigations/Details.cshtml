@@ -1,0 +1,50 @@
+﻿@model CrimeRecordManager.Models.Investigation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Investigation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.EmployeeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.EmployeeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvestigationDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvestigationDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvestigationStartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvestigationStartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvestigationEndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvestigationEndDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

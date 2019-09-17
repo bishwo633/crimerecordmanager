@@ -1,0 +1,70 @@
+﻿@model IEnumerable<CrimeRecordManager.Models.ChargeSheet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="table-responsive">
+    <table class="table table-striped" id="chargesheet-index-table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fir.LocationDetails)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChargeSheetDetails)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChargeSheetIssueDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChargeSheetBy)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fir.LocationDetails)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChargeSheetDetails)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChargeSheetIssueDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChargeSheetBy)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+    @section styles{
+        <link href="~/Content/DataTables/media/css/jquery.dataTables.min.css" rel="stylesheet" />
+    }
+
+    @section scripts{
+        <script src="~/Scripts/DataTables/media/js/jquery.dataTables.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#chargesheet-index-table').DataTable();
+            });
+        </script>
+    }
+

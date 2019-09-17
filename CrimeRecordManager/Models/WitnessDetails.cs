@@ -18,6 +18,7 @@ namespace CrimeRecordManager.Models
         public int Age { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
+        public Gender? Gender { get; set; }
 
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }

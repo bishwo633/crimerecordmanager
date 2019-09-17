@@ -3,3 +3,7 @@
 ################################################################################
 
 /CrimeRecordManager/bin
+/CrimeRecordManager/App_Data
+/.vs/CrimeRecordManager
+/CrimeRecordManager/obj/Debug
+/packages

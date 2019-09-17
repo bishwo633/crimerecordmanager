@@ -1,0 +1,56 @@
+﻿@model CrimeRecordManager.Models.Investigation
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Investigation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.EmployeeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.EmployeeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvestigationDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvestigationDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvestigationStartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvestigationStartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvestigationEndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvestigationEndDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-primary" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

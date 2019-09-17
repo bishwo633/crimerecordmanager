@@ -1,0 +1,50 @@
+﻿@model CrimeRecordManager.Models.ChargeSheet
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ChargeSheet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fir.LocationDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fir.LocationDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChargeSheetDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChargeSheetDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChargeSheetIssueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChargeSheetIssueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChargeSheetBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChargeSheetBy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<CrimeRecordManager.Models.EvidenceDetails>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped" id="evidence-index-table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Investigation.InvestigationDetails)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EvidenceName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EvidenceType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EvidenceFindingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Investigation.InvestigationDetails)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EvidenceName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EvidenceType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EvidenceFindingDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+@section styles{
+    <link href="~/Content/DataTables/media/css/jquery.dataTables.min.css" rel="stylesheet" />
+}
+
+@section scripts{
+    <script src="~/Scripts/DataTables/media/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#evidence-index-table').DataTable();
+        });
+    </script>
+}
+

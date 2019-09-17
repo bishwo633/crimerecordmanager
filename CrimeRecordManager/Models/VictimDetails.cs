@@ -19,7 +19,7 @@ namespace CrimeRecordManager.Models
         public string Phone { get; set; }
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-        public string Gender { get; set; }
+        public Gender? Gender { get; set; }
         [DataType(DataType.Date)]
         public DateTime RegistrationDate { get; set; }
         [StringLength(200)]

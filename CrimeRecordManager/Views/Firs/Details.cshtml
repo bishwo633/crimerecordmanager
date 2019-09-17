@@ -1,0 +1,50 @@
+﻿@model CrimeRecordManager.Models.Fir
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Fir</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CrimeDetail.CrimeType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CrimeDetail.CrimeType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocationDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocationDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistrationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegistrationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CrimeDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CrimeDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

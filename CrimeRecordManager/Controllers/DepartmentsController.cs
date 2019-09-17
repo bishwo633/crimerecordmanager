@@ -15,12 +15,14 @@ namespace CrimeRecordManager.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Departments
+        [Authorize(Roles = "Admin,Officer,Writer")]
         public ActionResult Index()
         {
             return View(db.Departments.ToList());
         }
 
         // GET: Departments/Details/5
+        [Authorize(Roles = "Admin,Officer,Writer")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +38,7 @@ namespace CrimeRecordManager.Controllers
         }
 
         // GET: Departments/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -44,6 +47,7 @@ namespace CrimeRecordManager.Controllers
         // POST: Departments/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,DepartmentName,Description")] Department department)
@@ -59,6 +63,7 @@ namespace CrimeRecordManager.Controllers
         }
 
         // GET: Departments/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -76,6 +81,7 @@ namespace CrimeRecordManager.Controllers
         // POST: Departments/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,DepartmentName,Description")] Department department)
@@ -90,6 +96,7 @@ namespace CrimeRecordManager.Controllers
         }
 
         // GET: Departments/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,6 +112,7 @@ namespace CrimeRecordManager.Controllers
         }
 
         // POST: Departments/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
